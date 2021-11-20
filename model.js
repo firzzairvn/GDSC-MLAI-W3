@@ -19,6 +19,9 @@ async function loadModel() {
     console.log('Model Loaded Successfull')
 };
 
+const movie_arr = tf.tensor(loadData());
+const movie_len = movies.length;
+
 // Buat fungsi untuk memberi rekomendasi film
 exports.recommend = async function recommend(userId) {
     let user = tf.fill([movie_len], Number(userId));
